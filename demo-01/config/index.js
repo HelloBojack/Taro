@@ -1,3 +1,4 @@
+const path = require('path');
 const config = {
   projectName: 'demo-01',
   date: '2020-9-2',
@@ -59,8 +60,13 @@ const config = {
         }
       }
     }
+  },
+  alias: {
+    '@components': path.resolve(__dirname, '..', 'src/components'),
+    '@utils': path.resolve(__dirname, '..', 'src/utils')
   }
 }
+
 
 module.exports = function (merge) {
   if (process.env.NODE_ENV === 'development') {

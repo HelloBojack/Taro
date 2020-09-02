@@ -7,10 +7,9 @@ import './index.scss'
 
 export default function Index() {
   return (
-    <View className='index'>
-      <Text>Hello world!</Text>
+    <View className='profile'>
+      <Text>Hello Profile!</Text>
       <TabBarPro></TabBarPro>
     </View>
   )
-
 }
