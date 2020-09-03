@@ -1,7 +1,8 @@
 export default {
   pages: [
     'pages/index/index',
-    'pages/profile/index'
+    'pages/profile/index',
+    'pages/playList/index',
   ],
   window: {
     backgroundTextStyle: 'light',
@@ -17,9 +18,12 @@ export default {
     list: [{
       "pagePath": 'pages/index/index',
       "text": "首页"
-    }, {
+    },
+    {
       "pagePath": 'pages/profile/index',
       "text": "我的"
-    }]
+    },
+
+    ]
   }
 }

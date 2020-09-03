@@ -6,14 +6,13 @@ const TabBarPro = () => {
   const [tabCurrent, setTabCurrent] = useState(0);
   const navList = ['/pages/index/index', '', '/pages/profile/index'];
 
-
   useEffect(() => {
     Taro.hideTabBar()
   }, [])
 
   const switchTab = (url: string, index: number) => {
     Taro.setStorageSync('navItem', index)
-    Taro.switchTab({ url: url })
+    Taro.switchTab({ url })
   }
   const handleClick = (value: number) => {
     setTabCurrent(value)

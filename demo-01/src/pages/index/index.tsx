@@ -1,4 +1,5 @@
 import React, { useState, useEffect, } from 'react'
+import Taro from '@tarojs/taro'
 import { View, Text, Image, Swiper, SwiperItem } from '@tarojs/components'
 import { AtButton, AtIcon, AtAvatar } from 'taro-ui'
 import TabBarPro from '@components/common/TabBarPro/TabBarPro'
@@ -23,6 +24,10 @@ export default function Index() {
     }
     fetchData()
   }, [])
+
+  const gotoPlayList = (playId: string) => {
+    Taro.navigateTo({ url: '/pages/playList/index?playId=' + playId })
+  }
 
   return (
     <View className='index'>
@@ -74,7 +79,7 @@ export default function Index() {
           {
             personalizedList.map((n, index) => {
               return (
-                <View className='personalized-list-item'>
+                <View className='personalized-list-item' onClick={() => gotoPlayList(n.id)}>
                   <Image src={n.picUrl} />
                   <Text>{n.name}</Text>
                 </View>
