@@ -16,10 +16,10 @@ export default {
     borderStyle: 'white',
     list: [{
       "pagePath": 'pages/index/index',
-      "text": ""
+      "text": "首页"
     }, {
       "pagePath": 'pages/profile/index',
-      "text": ""
+      "text": "我的"
     }]
   }
 }

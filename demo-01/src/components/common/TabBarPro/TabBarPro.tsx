@@ -5,6 +5,12 @@ import { AtTabBar } from 'taro-ui'
 const TabBarPro = () => {
   const [tabCurrent, setTabCurrent] = useState(0);
   const navList = ['/pages/index/index', '', '/pages/profile/index'];
+
+
+  useEffect(() => {
+    Taro.hideTabBar()
+  }, [])
+
   const switchTab = (url: string, index: number) => {
     Taro.setStorageSync('navItem', index)
     Taro.switchTab({ url: url })
@@ -13,15 +19,12 @@ const TabBarPro = () => {
     setTabCurrent(value)
     switchTab(navList[value], value)
   }
-  useEffect(() => {
-    Taro.hideTabBar()
-  }, [])
 
   return (
     <AtTabBar
       fixed
       tabList={[
-        { title: '主页', iconType: 'home' },
+        { title: '首页', iconType: 'home' },
         { title: 'Play', iconType: 'play' },
         { title: '我的', iconType: 'heart' }
       ]}

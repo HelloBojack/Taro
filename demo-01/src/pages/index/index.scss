@@ -1,0 +1,62 @@
+.index {
+  width: 720px;
+  margin: 10px auto 0;
+
+  .index-swiper {
+    height: 280px;
+
+    image {
+      border-radius: 10px;
+      width: 720px;
+      height: 280px;
+    }
+  }
+
+  .index-icon-list {
+    margin: 20px 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    View {
+      width: 20%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+
+    }
+  }
+
+  .personalized-list {
+    width: 100%;
+
+
+    View {
+      display: flex;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+
+
+    .personalized-list-item {
+      width: 33%;
+      flex-wrap: wrap;
+      margin-top: 20px;
+      margin-right: 20px;
+
+      Image {
+        height: 250px;
+        border-radius: 10px;
+      }
+
+      Text {
+        font-size: 22px;
+      }
+    }
+
+
+  }
+}

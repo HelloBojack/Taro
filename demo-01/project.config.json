@@ -2,7 +2,7 @@
 	"miniprogramRoot": "dist/",
 	"projectname": "demo-01",
 	"description": "demo-01",
-	"appid": "touristappid",
+	"appid": "wxe3556188115d5fd9",
 	"setting": {
 		"urlCheck": true,
 		"es6": false,
@@ -33,5 +33,6 @@
 	"compileType": "miniprogram",
 	"simulatorType": "wechat",
 	"simulatorPluginLibVersion": {},
+	"libVersion": "2.12.2",
 	"condition": {}
 }
