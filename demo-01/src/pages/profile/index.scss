@@ -1,9 +1,24 @@
-page {
-  height: 100%
-}
+// page {
+//   height: 100%
+// }
 
 .profile {
   height: 100%;
   width: 100%;
-  background: #CC352F;
+  padding-top: 20px;
+
+
+  .at-input {
+    width: 90%;
+    margin: 10px auto;
+  }
+
+  .at-input input {
+    padding-left: 20px;
+  }
+
+  .at-button {
+    width: 90%;
+    margin: 20px auto 0;
+  }
 }
