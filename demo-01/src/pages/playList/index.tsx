@@ -8,11 +8,12 @@ import './index.scss'
 
 const index = () => {
   const [playlistDetail, setPlaylistDetail] = useState({ name: '', coverImgUrl: '' })
-  const [tracks, setTracks] = useState([])
+  const [tracks, setTracks] = useState([{ id: '', name: '', ar: [{ name: '' }] }])
 
   useEffect(() => {
     async function fetchData() {
-      let result = await getPlaylistDetail(getCurrentInstance().router.params.playId)
+      let router: any = getCurrentInstance().router
+      let result = await getPlaylistDetail(router.params.playId)
       setPlaylistDetail(result.data.playlist)
       setTracks(result.data.playlist.tracks)
     }

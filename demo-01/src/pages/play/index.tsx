@@ -1,6 +1,6 @@
 import Taro from '@tarojs/taro'
 import React, { useState, useEffect } from 'react'
-import { View, Text } from '@tarojs/components'
+import { View } from '@tarojs/components'
 import { AtButton } from 'taro-ui'
 import { getCurrentInstance } from '@tarojs/taro'
 import {
@@ -10,13 +10,15 @@ import {
 import './index.scss'
 
 const index = () => {
-  let [songUrl, setSongUrl] = useState()
+  let [songUrl, setSongUrl] = useState('')
   let [songDetail, setSongDetail] = useState({ name: '', al: { picUrl: '' } })
   const backgroundAudioManager = Taro.getBackgroundAudioManager()
   useEffect(() => {
     async function fetchData() {
-      let result = await getSongUrl(getCurrentInstance().router.params.id)
-      let result2 = await getSongDetail(getCurrentInstance().router.params.id)
+      let router: any = getCurrentInstance().router
+      let id = router.params.id
+      let result = await getSongUrl(id)
+      let result2 = await getSongDetail(id)
       setSongUrl(result.data.data[0].url)
       setSongDetail(result2.data.songs[0])
     }
