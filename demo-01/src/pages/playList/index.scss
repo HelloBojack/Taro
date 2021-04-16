@@ -1,0 +1,31 @@
+.playlistDetail-header {
+  height: 250px;
+  background: #000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  Image {
+    width: 200px;
+    height: 200px;
+  }
+
+  Text {
+    color: #fff;
+    margin-left: 20px;
+
+  }
+}
+
+.playItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100px;
+
+  .number {
+    color: #ccc;
+    width: 50px;
+    text-align: center;
+  }
+}

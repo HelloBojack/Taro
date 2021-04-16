@@ -3,6 +3,7 @@ export default {
     'pages/index/index',
     'pages/profile/index',
     'pages/playList/index',
+    'pages/play/index',
   ],
   window: {
     backgroundTextStyle: 'light',
@@ -10,6 +11,7 @@ export default {
     navigationBarTitleText: 'WeChat',
     navigationBarTextStyle: 'black'
   },
+  requiredBackgroundModes: ["audio", "location"],
   tabBar: {
     color: '#bbc0ca',
     selectedColor: '1f83e1',

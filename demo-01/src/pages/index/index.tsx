@@ -4,23 +4,24 @@ import { View, Text, Image, Swiper, SwiperItem } from '@tarojs/components'
 import { AtButton, AtIcon, AtAvatar } from 'taro-ui'
 import TabBarPro from '@components/common/TabBarPro/TabBarPro'
 
-import { getIndexBanner, getPersonalizedList } from '@api/api'
+import { getIndexBanner, getPersonalizedList, getNewSong } from '@api/api'
 
 import './index.scss'
-
-
 
 export default function Index() {
   const [indexBannerList, setIndexBannerList] = useState([])
   const [personalizedList, setPersonalizedList] = useState([])
+  const [newSongList, setNewSongList] = useState([])
   // const [refresh, setRefresh] = useState(false);
 
   useEffect(() => {
     async function fetchData() {
       let result = await getIndexBanner()
       let result2 = await getPersonalizedList()
+      // let newSongListTemp = await getNewSong()
       setIndexBannerList(result.data.banners)
       setPersonalizedList(result2.data.result)
+      // setNewSongList(newSongListTemp)
     }
     fetchData()
   }, [])
@@ -41,10 +42,10 @@ export default function Index() {
           circular
         >
           {
-            indexBannerList.map((n, index) => {
+            indexBannerList.map((item, index) => {
               return (<SwiperItem>
                 <View>
-                  <Image src={n.pic} />
+                  <Image src={item.pic} />
                 </View>
               </SwiperItem>)
             })
@@ -77,17 +78,19 @@ export default function Index() {
         <Text>人气歌单推荐</Text>
         <View style="overflowX: scroll">
           {
-            personalizedList.map((n, index) => {
+            personalizedList.map((item, index) => {
               return (
-                <View className='personalized-list-item' onClick={() => gotoPlayList(n.id)}>
-                  <Image src={n.picUrl} />
-                  <Text>{n.name}</Text>
+                <View className='personalized-list-item' onClick={() => gotoPlayList(item.id)}>
+                  <Image src={item.picUrl} />
+                  <Text>{item.name}</Text>
                 </View>
               )
             })
           }
         </View>
       </View>
+
+
       <TabBarPro></TabBarPro>
     </View >
   )

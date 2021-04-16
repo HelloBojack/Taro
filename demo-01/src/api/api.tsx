@@ -9,4 +9,9 @@ export const getIndexBanner = () => get('/banner?type=2')
 export const getPersonalizedList = () => get('/personalized?limit=10')
 // 获取歌单详情
 export const getPlaylistDetail = params => get(`/playlist/detail?id=${params}`)
-
+// 获取新歌推荐
+export const getNewSong = () => get(`/personalized/newsong`)
+// 获取歌单详情
+export const getSongUrl = (params) => get(`/song/url?id=${params}`)
+// 获取歌曲详情
+export const getSongDetail = (params) => get(`/song/detail?ids=${params}`)

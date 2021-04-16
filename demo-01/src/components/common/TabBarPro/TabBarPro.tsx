@@ -4,7 +4,7 @@ import { AtTabBar } from 'taro-ui'
 
 const TabBarPro = () => {
   const [tabCurrent, setTabCurrent] = useState(0);
-  const navList = ['/pages/index/index', '', '/pages/profile/index'];
+  const navList = ['/pages/index/index', '/pages/play/index', '/pages/profile/index'];
 
   useEffect(() => {
     Taro.hideTabBar()

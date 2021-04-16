@@ -27,7 +27,7 @@ export function get(url: string, data = '') {
   let option = { url, data }
   return baseOptions(option)
 }
-export function post(url: string, data: any, contentType: string) {
-  let params = { url, data, contentType }
+export function post(url: string, data: any) {
+  let params = { url, data }
   return baseOptions(params, 'POST')
 }
